@@ -10,7 +10,7 @@
 *.so
 *.dylib
 
-build
+#build
 *.pid
 .out
 syncplayer/server
@@ -122,8 +122,6 @@ modules.xml
 *.log
 logs
 **/*.backup.*
-**/*.back.*
-dist
 
 node_modules
 bower_components
