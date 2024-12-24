@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  sync_server:
+    container_name: syncServer
+    image: justinbacon/sync_server:latest
+    volumes:
+      - ~/smb:/app/smb
+      - ./logs:/app/logs
+    ports:
+      - "2020:2020"
+      - "5000:5000"
+    restart: always
