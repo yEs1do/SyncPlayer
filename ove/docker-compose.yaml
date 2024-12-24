@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  sync_player_server:
+    image: ubuntu:latest  # 使用基础镜像
+    container_name: sync_player
+    ports:
+      - "2020:2020"  # 将容器端口2020映射到宿主机
+    working_dir: /app
+    volumes:
+      - .:/app  # 将当前目录挂载到容器的/app目录
+      - ./logs:/app/logs  # 单独挂载日志目录
+    command: bash -c "chmod +x ./server && ./server"  # 修改权限后直接运行
+    restart: always
